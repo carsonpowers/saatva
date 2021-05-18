@@ -1,0 +1,175 @@
+$app-horz-padding: 4rem;
+$app-vert-padding: 1rem;
+$app-saatva-color: #d4aa63;
+$app-saatva-color-hightlight: #ebbd6e;
+
+h1 {
+  font-family: "Source Serif Pro";
+  font-size: 3rem;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+h2,
+label {
+  font-family: "Questrial";
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+main {
+  padding: $app-vert-padding $app-horz-padding;
+}
+
+.header {
+  background-color: white;
+  border-bottom: solid 1px #d2d2d2;
+  text-align: left;
+  padding: $app-vert-padding $app-horz-padding;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  fill: $app-saatva-color;
+  height: 1.5rem;
+}
+
+.cart-container {
+  position: relative;
+}
+
+.cart {
+  height: 1.5rem;
+}
+
+.cart-quantity {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  padding: 4px;
+  color: white;
+  text-align: center;
+  font-family: "Source Serif Pro";
+  font-size: 10pt;
+  background-color: $app-saatva-color;
+  user-select: none;
+}
+
+.cym-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  @media (min-width: 1366px) {
+    flex-direction: row;
+  }
+}
+
+.image {
+  margin: 0 auto;
+  width: 634px;
+  height: 349px;
+  padding-bottom: $app-vert-padding;
+  animation: 500ms ease-out 0s 1 slideInFromLeft;
+}
+
+.control-container {
+  margin: 0 auto;
+  text-align: left;
+  white-space: nowrap;
+  animation: 500ms ease-out 0s 1 slideInFromRight;
+}
+
+.button-mattress {
+  padding: 1rem;
+  border: solid 1px #a6a19a;
+  background-color: white;
+  cursor: pointer;
+  margin-left: -1px;
+  font-family: "Questrial";
+  color: #a6a19a;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
+  &.selected {
+    background-color: #a6a19a;
+    color: white;
+    &:hover {
+      color: rgb(223, 223, 223);
+    }
+  }
+  &:hover {
+    color: #bfbab2;
+  }
+}
+
+.name-and-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-cart {
+  width: 100%;
+  padding: 1em;
+  background-color: $app-saatva-color;
+  border-style: none;
+  font-family: "Questrial";
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 500ms;
+  &:hover {
+    background-color: $app-saatva-color-hightlight;
+  }
+}
+
+.bounce {
+  animation-name: bounce-1;
+  animation-timing-function: ease;
+  animation-duration: 250ms;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+    background-color: $app-saatva-color;
+  }
+  50% {
+    transform: translateY(-10px);
+    background-color: $app-saatva-color-hightlight;
+  }
+  100% {
+    transform: translateY(0);
+    background-color: $app-saatva-color;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
